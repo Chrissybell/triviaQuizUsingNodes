@@ -1,0 +1,123 @@
+/*
+* Xuechao Li
+* Project4 practice
+*/
+//Libary imports.
+#include ....................................
+using namespace std;
+
+//Structure for creating a linked list that holds a trivia question,answer and point amount.
+
+struct triva_node {
+    string question;
+    string answer;
+    int point;
+    triva_node *next;
+};
+
+//creates a pointer to triva_node.
+typedef triva_node* ptr_node;
+//Prototypes
+void .............................................
+//creates two versions.
+//#define UNIT_TESTING
+#define triva_quiz
+
+int main() {
+    Unit_test();
+    ptr_node node_list = new triva_node;
+    //Creates a new trivia game /
+    //Sets up three original questions/
+    //Sets up loop for user to input his or her own questions.
+    //Quiz questions are stored in linked list.
+#ifdef triva_quiz
+    init_question_list(node_list);
+    cout << "*** Welcome to ................................... trivia quiz game ***\n";
+    ..............................................................
+    add_question(node_list);
+    cout << "Continue? (Yes/No): ";
+    ............................................
+    }
+
+//This is start of Trivia quiz game.
+ask_question(node_list, num_of_questions);
+cout << "\n*** Thank you for playing the trivia quiz game. Goodbye! ***";
+return 0;
+}
+
+#endif
+//Method for testing
+#ifdef UNIT_TESTING
+    Unit_Test();
+    return 0;
+}
+
+//initializes the quiz to have these three questions inputted into the linked list.
+void init_question_list(ptr_node& q_list) {
+    //ptr_node cur_ptr;
+    //ptr_node cur_ptr;
+    string bob;
+    ptr_node cur_ptr = new triva_node;
+    cur_ptr->question = "How long was the shortest war on record?";
+    cur_ptr->answer = "38";
+    cur_ptr->point = 100;
+    ................................................................
+}
+
+//gives user the option to add a question to the linked list.
+//question is added to the front of the linked list.
+void add_question(ptr_node& q_list) {
+    string answer;
+    //gets data from user.
+    ..............................................................
+    cout << "Enter a new question: ";
+    getline(cin, new_ptr->question);
+    ................................................................................
+}
+
+//Checks for null value
+//Ask the user trivia questions and starts the game
+int ask_question(ptr_node q_list, int num_ask) {
+    ...........................................................
+    if (q_list == NULL)
+    return 0;
+
+    if(num_ask < 1) {
+        cout << "Warning - the number of trivia to be asked must equal to or be
+larger than 1.";
+}
+    else if(num_of_questions < num_ask) {
+        cout << "Warning - There is only " << num_of_questions << " trivia in the
+list.";
+}
+
+    else {
+    for(int x = 0; x < num_ask; x++) {
+        cout << "Question: " << cur_ptr->question << endl;
+        cout << "Answer: ";
+        getline(cin, user_answer);
+        if (user_answer.compare(cur_ptr->answer) == 0) {//correct_answer) {
+        ...................................................................
+        }
+        else {
+    ..................................................
+    cur_ptr = cur_ptr->next;
+    }
+
+}
+    return 0;
+}
+
+//Test cases to check whether the methods work.
+void Unit_Test() {
+    ptr_node node_list = new triva_node;
+    init_question_list(node_list);
+    cout << "Unit Test Case 1: Ask no question. The program should give a warning
+message." << endl;
+    ask_question(node_list, 0);
+    cout << "\nCase 1 Passed\n\n";
+    cout << "Unit Test Case 2: Ask 1 question in the linked list.
+an incorrect answer." << endl;
+    .........................................................................................................................................
+    cout << "\n\n*** End of the Debugging Version ***";
+}
